@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<no.ntnu.tdt4250.study:University
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:no.ntnu.tdt4250.study="http://no/ntnu/tdt4250/study"
+    xsi:schemaLocation="http://no/ntnu/tdt4250/study study.ecore"
+    name="NTNU">
+  <studyProgrammes
+      code="MTDT"
+      name="Datateknologi"
+      numYears="5">
+    <baseSpecializations
+        name="Basis"
+        numYears="2">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.0 //@courses.9"/>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.1 //@courses.9"/>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.8"/>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.2 //@courses.9"/>
+      <furtherSpecializations
+          name="Programvaresystemer"
+          numYears="1">
+        <semesters
+            ordinal="5"
+            mandatoryCourses="//@courses.9">
+          <electiveCourses
+              courses="//@courses.5"/>
+        </semesters>
+        <semesters
+            ordinal="6"
+            mandatoryCourses="//@courses.8"/>
+        <furtherSpecializations
+            name="Programvareutvikling (1 semester missing)"
+            numYears="2">
+          <semesters
+              ordinal="7"
+              mandatoryCourses="//@courses.3 //@courses.4">
+            <electiveCourses
+                courses="//@courses.6 //@courses.7"/>
+          </semesters>
+          <semesters
+              ordinal="8"
+              mandatoryCourses="//@courses.8"/>
+          <semesters
+              ordinal="9"
+              mandatoryCourses="//@courses.8"/>
+        </furtherSpecializations>
+        <furtherSpecializations
+            name="Programvaresomething (1 year too short)"
+            numYears="1">
+          <semesters
+              ordinal="7"
+              mandatoryCourses="//@courses.8"/>
+          <semesters
+              ordinal="8"
+              mandatoryCourses="//@courses.8"/>
+        </furtherSpecializations>
+      </furtherSpecializations>
+      <furtherSpecializations
+          name="Databaser og søk"
+          numYears="3">
+        <semesters
+            ordinal="5"
+            mandatoryCourses="//@courses.9">
+          <electiveCourses
+              courses="//@courses.5"/>
+        </semesters>
+        <semesters
+            ordinal="6"
+            mandatoryCourses="//@courses.8"/>
+        <semesters
+            ordinal="7"
+            mandatoryCourses="//@courses.3">
+          <electiveCourses
+              courses="//@courses.6 //@courses.7"/>
+        </semesters>
+        <semesters
+            ordinal="8"
+            mandatoryCourses="//@courses.8"/>
+        <semesters
+            ordinal="9"
+            mandatoryCourses="//@courses.9 //@courses.11"/>
+        <semesters
+            ordinal="10"
+            mandatoryCourses="//@courses.9 //@courses.10"/>
+      </furtherSpecializations>
+    </baseSpecializations>
+  </studyProgrammes>
+  <studyProgrammes
+      code="BIT"
+      name="Informatikk"
+      numYears="3">
+    <baseSpecializations
+        name="Basis"
+        numYears="3">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.0"/>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.1 //@courses.2"/>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.9">
+        <electiveCourses
+            courses="//@courses.6"/>
+      </semesters>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.8"/>
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.9">
+        <electiveCourses
+            courses="//@courses.5"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.8"/>
+    </baseSpecializations>
+  </studyProgrammes>
+  <courses code="EXPH0004"
+      name="Exphil"/>
+  <courses code="TDT4100"
+      name="Objektorientert"
+      level="1"/>
+  <courses code="TTM4100"
+      name="KTN"
+      level="1"/>
+  <courses code="TDT4290"
+      name="Kundestyrt"
+      credits="15.0"
+      level="4"/>
+  <courses code="TDT4250"
+      name="Progdesign"
+      level="4"/>
+  <courses code="IT2810"
+      name="Webutvikling"
+      level="3"/>
+  <courses code="TPD4142"
+      name="Design thinking"
+      level="4"/>
+  <courses code="MFEL3010"
+      name="Medisin"
+      level="4"/>
+  <courses code="30SP"
+      name="30 Studiepoeng"
+      credits="30.0"/>
+  <courses code="22.5SP"
+      name="22.5 Studiepoeng"
+      credits="22.5"/>
+  <courses code="10SP"
+      name="10 Studiepoeng"
+      credits="10.0"/>
+  <courses code="5SP"
+      name="5 Studiepoeng"
+      credits="5.0"/>
+  <students
+      username="anders"
+      name="Anders">
+    <studyPlan
+        currentSemester="//@studyProgrammes.0/@baseSpecializations.0/@furtherSpecializations.0/@furtherSpecializations.0/@semesters.0">
+      <courses
+          course="//@courses.0"
+          grade="E"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.1"
+          grade="B"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.2"
+          grade="B"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.3"/>
+      <courses
+          course="//@courses.4"/>
+      <courses
+          course="//@courses.5"
+          grade="A"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.7"/>
+    </studyPlan>
+  </students>
+  <students
+      username="person2"
+      name="Person 2">
+    <studyPlan
+        currentSemester="//@studyProgrammes.1/@baseSpecializations.0/@semesters.4">
+      <courses
+          course="//@courses.0"
+          grade="C"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.1"
+          grade="C"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.2"
+          grade="C"
+          numExamAttempts="1"/>
+      <courses
+          course="//@courses.5"/>
+    </studyPlan>
+  </students>
+</no.ntnu.tdt4250.study:University>
