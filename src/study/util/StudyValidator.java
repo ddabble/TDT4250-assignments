@@ -4,17 +4,25 @@ package study.util;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
-import study.*;
+import study.Course;
+import study.CourseRelationship;
+import study.ElectiveCourseList;
+import study.GradeEnum;
+import study.IndividualStudyPlan;
+import study.Semester;
+import study.Specialization;
+import study.Student;
+import study.StudyPackage;
+import study.StudyProgramme;
+import study.University;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,32 +155,42 @@ public class StudyValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 */
 	public boolean validateStudyProgramme_allSpecializationsShouldAddUpToNumYears(StudyProgramme studyProgramme, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		Predicate<Specialization> recursiveSumPredicate = s -> doAllFurtherSpecializationsAddUpToNumYears(s, studyProgramme.getNumYears());
-		if (studyProgramme.getBaseSpecializations().stream().allMatch(recursiveSumPredicate))
-			return true;
-		else {
+		List<Specialization> specializationsThatDoNotAddUpToNumYears = studyProgramme.getBaseSpecializations().stream().flatMap(
+			s -> getSpecializationsThatDoNotAddUpToNumYears(s, studyProgramme.getNumYears())
+		).collect(Collectors.toList());
+		if (!specializationsThatDoNotAddUpToNumYears.isEmpty()) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "allSpecializationsShouldAddUpToNumYears", getObjectLabel(studyProgramme, context) },
-						 new Object[] { studyProgramme },
-						 context));
+				specializationsThatDoNotAddUpToNumYears.forEach(s ->
+					diagnostics.add(
+						createDiagnostic(
+							Diagnostic.ERROR,
+							 DIAGNOSTIC_SOURCE,
+							 0,
+							 "_UI_GenericConstraint_diagnostic",
+							 new Object[] { "allSpecializationsShouldAddUpToNumYears", getObjectLabel(s, context) },
+							 new Object[] { s },
+							 context
+						 )
+					)
+				);
 			}
 			return false;
 		}
+		return true;
 	}
 
-	private static boolean doAllFurtherSpecializationsAddUpToNumYears(Specialization specialization, int numYears) {
+	private static Stream<Specialization> getSpecializationsThatDoNotAddUpToNumYears(Specialization specialization, int numYears) {
 		List<Specialization> furtherSpecializations = specialization.getFurtherSpecializations();
-		if (furtherSpecializations.isEmpty())
-			return specialization.getNumYears() == numYears;
+		if (furtherSpecializations.isEmpty()) {
+			if (specialization.getNumYears() == numYears)
+				return Stream.empty();
+			else
+				return Stream.of(specialization);
+		}
 
-		Predicate<Specialization> recursiveSumPredicate = s -> doAllFurtherSpecializationsAddUpToNumYears(s, numYears - specialization.getNumYears());
-		return furtherSpecializations.stream().allMatch(recursiveSumPredicate);
+		return furtherSpecializations.stream().flatMap(
+			s -> getSpecializationsThatDoNotAddUpToNumYears(s, numYears - specialization.getNumYears())
+		);
 	}
 
 	/**
