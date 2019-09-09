@@ -22,8 +22,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="university" lowerBound="1"
         eType="#//University" eOpposite="#//University/studyProgrammes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numYears" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSpecializations" lowerBound="1"
+        upperBound="-1" eType="#//Specialization" containment="true" eOpposite="#//Specialization/studyProgramme"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="baseSpecializations" lowerBound="1"
-        upperBound="-1" eType="#//Specialization" containment="true"/>
+        upperBound="-1" eType="#//Specialization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialization">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -32,12 +34,14 @@
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
       <details key="semesterCountShouldAddUpToNumYears" value="self.semesters -> size() = 2*self.numYears"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studyProgramme" lowerBound="1"
+        eType="#//StudyProgramme" eOpposite="#//StudyProgramme/allSpecializations"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numYears" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" lowerBound="2"
         upperBound="-1" eType="#//Semester" containment="true" eOpposite="#//Semester/specialization"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="furtherSpecializations"
-        upperBound="-1" eType="#//Specialization" containment="true"/>
+        upperBound="-1" eType="#//Specialization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eStructuralFeatures xsi:type="ecore:EReference" name="specialization" lowerBound="1"

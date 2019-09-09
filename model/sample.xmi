@@ -9,10 +9,12 @@
   <studyProgrammes
       code="MTDT"
       name="Datateknologi"
-      numYears="5">
-    <baseSpecializations
+      numYears="5"
+      baseSpecializations="//@studyProgrammes.0/@allSpecializations.0">
+    <allSpecializations
         name="Basis"
-        numYears="2">
+        numYears="2"
+        furtherSpecializations="//@studyProgrammes.0/@allSpecializations.1 //@studyProgrammes.0/@allSpecializations.2">
       <semesters
           ordinal="1"
           mandatoryCourses="//@courses.0 //@courses.9"/>
@@ -25,80 +27,82 @@
       <semesters
           ordinal="4"
           mandatoryCourses="//@courses.2 //@courses.9"/>
-      <furtherSpecializations
-          name="Programvaresystemer"
-          numYears="1">
-        <semesters
-            ordinal="5"
-            mandatoryCourses="//@courses.9">
-          <electiveCourses
-              courses="//@courses.5"/>
-        </semesters>
-        <semesters
-            ordinal="6"
-            mandatoryCourses="//@courses.8"/>
-        <furtherSpecializations
-            name="Programvareutvikling (1 semester missing)"
-            numYears="2">
-          <semesters
-              ordinal="7"
-              mandatoryCourses="//@courses.3 //@courses.4">
-            <electiveCourses
-                courses="//@courses.6 //@courses.7"/>
-          </semesters>
-          <semesters
-              ordinal="8"
-              mandatoryCourses="//@courses.8"/>
-          <semesters
-              ordinal="9"
-              mandatoryCourses="//@courses.8"/>
-        </furtherSpecializations>
-        <furtherSpecializations
-            name="Programvaresomething (1 year too short)"
-            numYears="1">
-          <semesters
-              ordinal="7"
-              mandatoryCourses="//@courses.8"/>
-          <semesters
-              ordinal="8"
-              mandatoryCourses="//@courses.8"/>
-        </furtherSpecializations>
-      </furtherSpecializations>
-      <furtherSpecializations
-          name="Databaser og søk"
-          numYears="3">
-        <semesters
-            ordinal="5"
-            mandatoryCourses="//@courses.9">
-          <electiveCourses
-              courses="//@courses.5"/>
-        </semesters>
-        <semesters
-            ordinal="6"
-            mandatoryCourses="//@courses.8"/>
-        <semesters
-            ordinal="7"
-            mandatoryCourses="//@courses.3">
-          <electiveCourses
-              courses="//@courses.6 //@courses.7"/>
-        </semesters>
-        <semesters
-            ordinal="8"
-            mandatoryCourses="//@courses.8"/>
-        <semesters
-            ordinal="9"
-            mandatoryCourses="//@courses.9 //@courses.11"/>
-        <semesters
-            ordinal="10"
-            mandatoryCourses="//@courses.9 //@courses.10"/>
-      </furtherSpecializations>
-    </baseSpecializations>
+    </allSpecializations>
+    <allSpecializations
+        name="Programvaresystemer"
+        numYears="1"
+        furtherSpecializations="//@studyProgrammes.0/@allSpecializations.3 //@studyProgrammes.0/@allSpecializations.4">
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.9">
+        <electiveCourses
+            courses="//@courses.5"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.8"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Databaser og søk"
+        numYears="3">
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.9">
+        <electiveCourses
+            courses="//@courses.5"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.8"/>
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.3">
+        <electiveCourses
+            courses="//@courses.6 //@courses.7"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.8"/>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.9 //@courses.11"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.9 //@courses.10"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Programvareutvikling (1 semester missing)"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.3 //@courses.4">
+        <electiveCourses
+            courses="//@courses.6 //@courses.7"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.8"/>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.8"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Programvaresomething (1 year too short)"
+        numYears="1">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.8"/>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.8"/>
+    </allSpecializations>
   </studyProgrammes>
   <studyProgrammes
       code="BIT"
       name="Informatikk"
-      numYears="3">
-    <baseSpecializations
+      numYears="3"
+      baseSpecializations="//@studyProgrammes.1/@allSpecializations.0">
+    <allSpecializations
         name="Basis"
         numYears="3">
       <semesters
@@ -125,7 +129,7 @@
       <semesters
           ordinal="6"
           mandatoryCourses="//@courses.8"/>
-    </baseSpecializations>
+    </allSpecializations>
   </studyProgrammes>
   <courses code="EXPH0004"
       name="Exphil"/>
@@ -167,7 +171,7 @@
       username="anders"
       name="Anders">
     <studyPlan
-        currentSemester="//@studyProgrammes.0/@baseSpecializations.0/@furtherSpecializations.0/@furtherSpecializations.0/@semesters.0">
+        currentSemester="//@studyProgrammes.0/@allSpecializations.3/@semesters.0">
       <courses
           course="//@courses.0"
           grade="E"
@@ -196,7 +200,7 @@
       username="person2"
       name="Person 2">
     <studyPlan
-        currentSemester="//@studyProgrammes.1/@baseSpecializations.0/@semesters.4">
+        currentSemester="//@studyProgrammes.1/@allSpecializations.0/@semesters.4">
       <courses
           course="//@courses.0"
           grade="C"

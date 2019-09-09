@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,6 +36,7 @@ import study.University;
  *   <li>{@link study.impl.StudyProgrammeImpl#getName <em>Name</em>}</li>
  *   <li>{@link study.impl.StudyProgrammeImpl#getUniversity <em>University</em>}</li>
  *   <li>{@link study.impl.StudyProgrammeImpl#getNumYears <em>Num Years</em>}</li>
+ *   <li>{@link study.impl.StudyProgrammeImpl#getAllSpecializations <em>All Specializations</em>}</li>
  *   <li>{@link study.impl.StudyProgrammeImpl#getBaseSpecializations <em>Base Specializations</em>}</li>
  * </ul>
  *
@@ -103,7 +104,17 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 	protected int numYears = NUM_YEARS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBaseSpecializations() <em>Base Specializations</em>}' containment reference list.
+	 * The cached value of the '{@link #getAllSpecializations() <em>All Specializations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllSpecializations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Specialization> allSpecializations;
+
+	/**
+	 * The cached value of the '{@link #getBaseSpecializations() <em>Base Specializations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBaseSpecializations()
@@ -249,9 +260,22 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public EList<Specialization> getAllSpecializations() {
+		if (allSpecializations == null) {
+			allSpecializations = new EObjectContainmentWithInverseEList<Specialization>(Specialization.class, this, StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS, StudyPackage.SPECIALIZATION__STUDY_PROGRAMME);
+		}
+		return allSpecializations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Specialization> getBaseSpecializations() {
 		if (baseSpecializations == null) {
-			baseSpecializations = new EObjectContainmentEList<Specialization>(Specialization.class, this, StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS);
+			baseSpecializations = new EObjectResolvingEList<Specialization>(Specialization.class, this, StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS);
 		}
 		return baseSpecializations;
 	}
@@ -269,6 +293,8 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetUniversity((University)otherEnd, msgs);
+			case StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAllSpecializations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -283,8 +309,8 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case StudyPackage.STUDY_PROGRAMME__UNIVERSITY:
 				return basicSetUniversity(null, msgs);
-			case StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS:
-				return ((InternalEList<?>)getBaseSpecializations()).basicRemove(otherEnd, msgs);
+			case StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS:
+				return ((InternalEList<?>)getAllSpecializations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -319,6 +345,8 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 				return getUniversity();
 			case StudyPackage.STUDY_PROGRAMME__NUM_YEARS:
 				return getNumYears();
+			case StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS:
+				return getAllSpecializations();
 			case StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS:
 				return getBaseSpecializations();
 		}
@@ -345,6 +373,10 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case StudyPackage.STUDY_PROGRAMME__NUM_YEARS:
 				setNumYears((Integer)newValue);
+				return;
+			case StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS:
+				getAllSpecializations().clear();
+				getAllSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
 			case StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS:
 				getBaseSpecializations().clear();
@@ -374,6 +406,9 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 			case StudyPackage.STUDY_PROGRAMME__NUM_YEARS:
 				setNumYears(NUM_YEARS_EDEFAULT);
 				return;
+			case StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS:
+				getAllSpecializations().clear();
+				return;
 			case StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS:
 				getBaseSpecializations().clear();
 				return;
@@ -397,6 +432,8 @@ public class StudyProgrammeImpl extends MinimalEObjectImpl.Container implements 
 				return getUniversity() != null;
 			case StudyPackage.STUDY_PROGRAMME__NUM_YEARS:
 				return numYears != NUM_YEARS_EDEFAULT;
+			case StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS:
+				return allSpecializations != null && !allSpecializations.isEmpty();
 			case StudyPackage.STUDY_PROGRAMME__BASE_SPECIALIZATIONS:
 				return baseSpecializations != null && !baseSpecializations.isEmpty();
 		}

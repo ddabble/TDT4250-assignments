@@ -14,14 +14,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import study.Semester;
 import study.Specialization;
 import study.StudyPackage;
+import study.StudyProgramme;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +32,7 @@ import study.StudyPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link study.impl.SpecializationImpl#getStudyProgramme <em>Study Programme</em>}</li>
  *   <li>{@link study.impl.SpecializationImpl#getName <em>Name</em>}</li>
  *   <li>{@link study.impl.SpecializationImpl#getNumYears <em>Num Years</em>}</li>
  *   <li>{@link study.impl.SpecializationImpl#getSemesters <em>Semesters</em>}</li>
@@ -91,7 +93,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<Semester> semesters;
 
 	/**
-	 * The cached value of the '{@link #getFurtherSpecializations() <em>Further Specializations</em>}' containment reference list.
+	 * The cached value of the '{@link #getFurtherSpecializations() <em>Further Specializations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFurtherSpecializations()
@@ -117,6 +119,49 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	protected EClass eStaticClass() {
 		return StudyPackage.Literals.SPECIALIZATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StudyProgramme getStudyProgramme() {
+		if (eContainerFeatureID() != StudyPackage.SPECIALIZATION__STUDY_PROGRAMME) return null;
+		return (StudyProgramme)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStudyProgramme(StudyProgramme newStudyProgramme, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newStudyProgramme, StudyPackage.SPECIALIZATION__STUDY_PROGRAMME, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStudyProgramme(StudyProgramme newStudyProgramme) {
+		if (newStudyProgramme != eInternalContainer() || (eContainerFeatureID() != StudyPackage.SPECIALIZATION__STUDY_PROGRAMME && newStudyProgramme != null)) {
+			if (EcoreUtil.isAncestor(this, newStudyProgramme))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newStudyProgramme != null)
+				msgs = ((InternalEObject)newStudyProgramme).eInverseAdd(this, StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS, StudyProgramme.class, msgs);
+			msgs = basicSetStudyProgramme(newStudyProgramme, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.SPECIALIZATION__STUDY_PROGRAMME, newStudyProgramme, newStudyProgramme));
 	}
 
 	/**
@@ -186,7 +231,7 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public EList<Specialization> getFurtherSpecializations() {
 		if (furtherSpecializations == null) {
-			furtherSpecializations = new EObjectContainmentEList<Specialization>(Specialization.class, this, StudyPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS);
+			furtherSpecializations = new EObjectResolvingEList<Specialization>(Specialization.class, this, StudyPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS);
 		}
 		return furtherSpecializations;
 	}
@@ -200,6 +245,10 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetStudyProgramme((StudyProgramme)otherEnd, msgs);
 			case StudyPackage.SPECIALIZATION__SEMESTERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSemesters()).basicAdd(otherEnd, msgs);
 		}
@@ -214,10 +263,10 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				return basicSetStudyProgramme(null, msgs);
 			case StudyPackage.SPECIALIZATION__SEMESTERS:
 				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
-			case StudyPackage.SPECIALIZATION__FURTHER_SPECIALIZATIONS:
-				return ((InternalEList<?>)getFurtherSpecializations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -228,8 +277,24 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				return eInternalContainer().eInverseRemove(this, StudyPackage.STUDY_PROGRAMME__ALL_SPECIALIZATIONS, StudyProgramme.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				return getStudyProgramme();
 			case StudyPackage.SPECIALIZATION__NAME:
 				return getName();
 			case StudyPackage.SPECIALIZATION__NUM_YEARS:
@@ -251,6 +316,9 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				setStudyProgramme((StudyProgramme)newValue);
+				return;
 			case StudyPackage.SPECIALIZATION__NAME:
 				setName((String)newValue);
 				return;
@@ -277,6 +345,9 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				setStudyProgramme((StudyProgramme)null);
+				return;
 			case StudyPackage.SPECIALIZATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -301,6 +372,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case StudyPackage.SPECIALIZATION__STUDY_PROGRAMME:
+				return getStudyProgramme() != null;
 			case StudyPackage.SPECIALIZATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case StudyPackage.SPECIALIZATION__NUM_YEARS:

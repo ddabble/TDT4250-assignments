@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link study.Specialization#getStudyProgramme <em>Study Programme</em>}</li>
  *   <li>{@link study.Specialization#getName <em>Name</em>}</li>
  *   <li>{@link study.Specialization#getNumYears <em>Num Years</em>}</li>
  *   <li>{@link study.Specialization#getSemesters <em>Semesters</em>}</li>
@@ -27,6 +28,30 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Specialization extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Study Programme</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link study.StudyProgramme#getAllSpecializations <em>All Specializations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Study Programme</em>' container reference.
+	 * @see #setStudyProgramme(StudyProgramme)
+	 * @see study.StudyPackage#getSpecialization_StudyProgramme()
+	 * @see study.StudyProgramme#getAllSpecializations
+	 * @model opposite="allSpecializations" required="true" transient="false"
+	 * @generated
+	 */
+	StudyProgramme getStudyProgramme();
+
+	/**
+	 * Sets the value of the '{@link study.Specialization#getStudyProgramme <em>Study Programme</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Study Programme</em>' container reference.
+	 * @see #getStudyProgramme()
+	 * @generated
+	 */
+	void setStudyProgramme(StudyProgramme value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,13 +111,13 @@ public interface Specialization extends EObject {
 	EList<Semester> getSemesters();
 
 	/**
-	 * Returns the value of the '<em><b>Further Specializations</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Further Specializations</b></em>' reference list.
 	 * The list contents are of type {@link study.Specialization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Further Specializations</em>' containment reference list.
+	 * @return the value of the '<em>Further Specializations</em>' reference list.
 	 * @see study.StudyPackage#getSpecialization_FurtherSpecializations()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Specialization> getFurtherSpecializations();

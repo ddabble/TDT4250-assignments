@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link study.StudyProgramme#getName <em>Name</em>}</li>
  *   <li>{@link study.StudyProgramme#getUniversity <em>University</em>}</li>
  *   <li>{@link study.StudyProgramme#getNumYears <em>Num Years</em>}</li>
+ *   <li>{@link study.StudyProgramme#getAllSpecializations <em>All Specializations</em>}</li>
  *   <li>{@link study.StudyProgramme#getBaseSpecializations <em>Base Specializations</em>}</li>
  * </ul>
  *
@@ -118,13 +119,27 @@ public interface StudyProgramme extends EObject {
 	void setNumYears(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Base Specializations</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>All Specializations</b></em>' containment reference list.
+	 * The list contents are of type {@link study.Specialization}.
+	 * It is bidirectional and its opposite is '{@link study.Specialization#getStudyProgramme <em>Study Programme</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Specializations</em>' containment reference list.
+	 * @see study.StudyPackage#getStudyProgramme_AllSpecializations()
+	 * @see study.Specialization#getStudyProgramme
+	 * @model opposite="studyProgramme" containment="true" required="true"
+	 * @generated
+	 */
+	EList<Specialization> getAllSpecializations();
+
+	/**
+	 * Returns the value of the '<em><b>Base Specializations</b></em>' reference list.
 	 * The list contents are of type {@link study.Specialization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Specializations</em>' containment reference list.
+	 * @return the value of the '<em>Base Specializations</em>' reference list.
 	 * @see study.StudyPackage#getStudyProgramme_BaseSpecializations()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<Specialization> getBaseSpecializations();

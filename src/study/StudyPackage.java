@@ -169,13 +169,22 @@ public interface StudyPackage extends EPackage {
 	int STUDY_PROGRAMME__NUM_YEARS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Base Specializations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>All Specializations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDY_PROGRAMME__BASE_SPECIALIZATIONS = 4;
+	int STUDY_PROGRAMME__ALL_SPECIALIZATIONS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Base Specializations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDY_PROGRAMME__BASE_SPECIALIZATIONS = 5;
 
 	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
@@ -184,7 +193,7 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDY_PROGRAMME_FEATURE_COUNT = 5;
+	int STUDY_PROGRAMME_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -206,13 +215,22 @@ public interface StudyPackage extends EPackage {
 	int SPECIALIZATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Study Programme</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__STUDY_PROGRAMME = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__NAME = 0;
+	int SPECIALIZATION__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Num Years</b></em>' attribute.
@@ -221,7 +239,7 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__NUM_YEARS = 1;
+	int SPECIALIZATION__NUM_YEARS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
@@ -230,16 +248,16 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__SEMESTERS = 2;
+	int SPECIALIZATION__SEMESTERS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Further Specializations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Further Specializations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__FURTHER_SPECIALIZATIONS = 3;
+	int SPECIALIZATION__FURTHER_SPECIALIZATIONS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Specialization</em>' class.
@@ -248,7 +266,7 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_FEATURE_COUNT = 4;
+	int SPECIALIZATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Specialization</em>' class.
@@ -746,10 +764,21 @@ public interface StudyPackage extends EPackage {
 	EAttribute getStudyProgramme_NumYears();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link study.StudyProgramme#getBaseSpecializations <em>Base Specializations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link study.StudyProgramme#getAllSpecializations <em>All Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Base Specializations</em>'.
+	 * @return the meta object for the containment reference list '<em>All Specializations</em>'.
+	 * @see study.StudyProgramme#getAllSpecializations()
+	 * @see #getStudyProgramme()
+	 * @generated
+	 */
+	EReference getStudyProgramme_AllSpecializations();
+
+	/**
+	 * Returns the meta object for the reference list '{@link study.StudyProgramme#getBaseSpecializations <em>Base Specializations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Base Specializations</em>'.
 	 * @see study.StudyProgramme#getBaseSpecializations()
 	 * @see #getStudyProgramme()
 	 * @generated
@@ -765,6 +794,17 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSpecialization();
+
+	/**
+	 * Returns the meta object for the container reference '{@link study.Specialization#getStudyProgramme <em>Study Programme</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Study Programme</em>'.
+	 * @see study.Specialization#getStudyProgramme()
+	 * @see #getSpecialization()
+	 * @generated
+	 */
+	EReference getSpecialization_StudyProgramme();
 
 	/**
 	 * Returns the meta object for the attribute '{@link study.Specialization#getName <em>Name</em>}'.
@@ -800,10 +840,10 @@ public interface StudyPackage extends EPackage {
 	EReference getSpecialization_Semesters();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link study.Specialization#getFurtherSpecializations <em>Further Specializations</em>}'.
+	 * Returns the meta object for the reference list '{@link study.Specialization#getFurtherSpecializations <em>Further Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Further Specializations</em>'.
+	 * @return the meta object for the reference list '<em>Further Specializations</em>'.
 	 * @see study.Specialization#getFurtherSpecializations()
 	 * @see #getSpecialization()
 	 * @generated
@@ -1230,7 +1270,15 @@ public interface StudyPackage extends EPackage {
 		EAttribute STUDY_PROGRAMME__NUM_YEARS = eINSTANCE.getStudyProgramme_NumYears();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Specializations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>All Specializations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STUDY_PROGRAMME__ALL_SPECIALIZATIONS = eINSTANCE.getStudyProgramme_AllSpecializations();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Specializations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1246,6 +1294,14 @@ public interface StudyPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SPECIALIZATION = eINSTANCE.getSpecialization();
+
+		/**
+		 * The meta object literal for the '<em><b>Study Programme</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATION__STUDY_PROGRAMME = eINSTANCE.getSpecialization_StudyProgramme();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1272,7 +1328,7 @@ public interface StudyPackage extends EPackage {
 		EReference SPECIALIZATION__SEMESTERS = eINSTANCE.getSpecialization_Semesters();
 
 		/**
-		 * The meta object literal for the '<em><b>Further Specializations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Further Specializations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

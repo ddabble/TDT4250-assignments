@@ -279,8 +279,18 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getStudyProgramme_BaseSpecializations() {
+	public EReference getStudyProgramme_AllSpecializations() {
 		return (EReference)studyProgrammeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStudyProgramme_BaseSpecializations() {
+		return (EReference)studyProgrammeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -299,8 +309,8 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSpecialization_Name() {
-		return (EAttribute)specializationEClass.getEStructuralFeatures().get(0);
+	public EReference getSpecialization_StudyProgramme() {
+		return (EReference)specializationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -309,7 +319,7 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSpecialization_NumYears() {
+	public EAttribute getSpecialization_Name() {
 		return (EAttribute)specializationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -319,8 +329,18 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSpecialization_NumYears() {
+		return (EAttribute)specializationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getSpecialization_Semesters() {
-		return (EReference)specializationEClass.getEStructuralFeatures().get(2);
+		return (EReference)specializationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -330,7 +350,7 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 	 */
 	@Override
 	public EReference getSpecialization_FurtherSpecializations() {
-		return (EReference)specializationEClass.getEStructuralFeatures().get(3);
+		return (EReference)specializationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -663,9 +683,11 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 		createEAttribute(studyProgrammeEClass, STUDY_PROGRAMME__NAME);
 		createEReference(studyProgrammeEClass, STUDY_PROGRAMME__UNIVERSITY);
 		createEAttribute(studyProgrammeEClass, STUDY_PROGRAMME__NUM_YEARS);
+		createEReference(studyProgrammeEClass, STUDY_PROGRAMME__ALL_SPECIALIZATIONS);
 		createEReference(studyProgrammeEClass, STUDY_PROGRAMME__BASE_SPECIALIZATIONS);
 
 		specializationEClass = createEClass(SPECIALIZATION);
+		createEReference(specializationEClass, SPECIALIZATION__STUDY_PROGRAMME);
 		createEAttribute(specializationEClass, SPECIALIZATION__NAME);
 		createEAttribute(specializationEClass, SPECIALIZATION__NUM_YEARS);
 		createEReference(specializationEClass, SPECIALIZATION__SEMESTERS);
@@ -750,13 +772,15 @@ public class StudyPackageImpl extends EPackageImpl implements StudyPackage {
 		initEAttribute(getStudyProgramme_Name(), ecorePackage.getEString(), "name", null, 0, 1, StudyProgramme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudyProgramme_University(), this.getUniversity(), this.getUniversity_StudyProgrammes(), "university", null, 1, 1, StudyProgramme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudyProgramme_NumYears(), ecorePackage.getEInt(), "numYears", null, 0, 1, StudyProgramme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStudyProgramme_BaseSpecializations(), this.getSpecialization(), null, "baseSpecializations", null, 1, -1, StudyProgramme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStudyProgramme_AllSpecializations(), this.getSpecialization(), this.getSpecialization_StudyProgramme(), "allSpecializations", null, 1, -1, StudyProgramme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStudyProgramme_BaseSpecializations(), this.getSpecialization(), null, "baseSpecializations", null, 1, -1, StudyProgramme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSpecialization_StudyProgramme(), this.getStudyProgramme(), this.getStudyProgramme_AllSpecializations(), "studyProgramme", null, 1, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecialization_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecialization_NumYears(), ecorePackage.getEInt(), "numYears", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecialization_Semesters(), this.getSemester(), this.getSemester_Specialization(), "semesters", null, 2, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecialization_FurtherSpecializations(), this.getSpecialization(), null, "furtherSpecializations", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecialization_FurtherSpecializations(), this.getSpecialization(), null, "furtherSpecializations", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSemester_Specialization(), this.getSpecialization(), this.getSpecialization_Semesters(), "specialization", null, 1, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
