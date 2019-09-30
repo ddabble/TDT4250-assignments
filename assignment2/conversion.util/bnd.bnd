@@ -1,0 +1,14 @@
+Bundle-Version: 1.0.0.${tstamp}
+
+-baseline: *
+-buildpath: \
+	osgi.annotation;version=7.0.0,\
+	conversion.api;version=latest,\
+	osgi.cmpn,\
+	org.osgi.service.cm,\
+	org.osgi.core
+
+-runrequires: bnd.identity;version='latest';id='conversion.api'
+-runfw: org.eclipse.osgi;version='[3.13.100.v20180827-1536,3.13.100.v20180827-1536]'
+-runee: JavaSE-1.8
+-runbundles: conversion.api;version=snapshot
