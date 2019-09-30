@@ -1,0 +1,10 @@
+sudo: false
+
+language: java
+
+jdk:
+  - openjdk8
+
+install: ./assignment2/gradlew --version
+
+script: ./assignment2/gradlew --continue
