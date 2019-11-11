@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<no.ntnu.tdt4250.study:University
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:no.ntnu.tdt4250.study="http://no/ntnu/tdt4250/study"
+    xsi:schemaLocation="http://no/ntnu/tdt4250/study study.ecore"
+    name="NTNU">
+  <studyProgrammes
+      code="MTDT"
+      name="Datateknologi"
+      numYears="5"
+      baseSpecializations="//@studyProgrammes.0/@allSpecializations.0">
+    <allSpecializations
+        numYears="2"
+        furtherSpecializations="//@studyProgrammes.0/@allSpecializations.1 //@studyProgrammes.0/@allSpecializations.2 //@studyProgrammes.0/@allSpecializations.3 //@studyProgrammes.0/@allSpecializations.4">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.0 //@courses.1 //@courses.2 //@courses.3 //@courses.4"/>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.5 //@courses.6 //@courses.7 //@courses.8"/>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.9 //@courses.10 //@courses.11 //@courses.12"/>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.13 //@courses.14 //@courses.15 //@courses.16"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Programvaresystemer"
+        numYears="1"
+        furtherSpecializations="//@studyProgrammes.0/@allSpecializations.5 //@studyProgrammes.0/@allSpecializations.6 //@studyProgrammes.0/@allSpecializations.7">
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.17 //@courses.18 //@courses.19">
+        <electiveCourses
+            courses="//@courses.20 //@courses.21 //@courses.22 //@courses.23 //@courses.24"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.25 //@courses.26 //@courses.27 //@courses.28"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Databaser og søk"
+        numYears="3">
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.21 //@courses.17 //@courses.19">
+        <electiveCourses
+            courses="//@courses.20 //@courses.22 //@courses.23 //@courses.18 //@courses.24"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.25 //@courses.30 //@courses.27 //@courses.28"/>
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.91 //@courses.33">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.89 //@courses.84">
+        <electiveCourses
+            courses="//@courses.92 //@courses.70 //@courses.71 //@courses.87 //@courses.90 //@courses.83 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Kunstig intelligens"
+        numYears="3">
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.17 //@courses.22 //@courses.19">
+        <electiveCourses
+            courses="//@courses.20 //@courses.21 //@courses.23 //@courses.18 //@courses.24"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.31 //@courses.25 //@courses.27 //@courses.28"/>
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.85 //@courses.33">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.86 //@courses.84">
+        <electiveCourses
+            courses="//@courses.87 //@courses.88 //@courses.70 //@courses.71 //@courses.89 //@courses.90 //@courses.83 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Algoritmer og datamaskiner"
+        numYears="1"
+        furtherSpecializations="//@studyProgrammes.0/@allSpecializations.8 //@studyProgrammes.0/@allSpecializations.9 //@studyProgrammes.0/@allSpecializations.10">
+      <semesters
+          ordinal="5"
+          mandatoryCourses="//@courses.17 //@courses.24 //@courses.19">
+        <electiveCourses
+            courses="//@courses.20 //@courses.21 //@courses.22 //@courses.23 //@courses.18"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.25 //@courses.29 //@courses.27 //@courses.28"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Digital virksomhetsutvikling"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.34 //@courses.33">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.73 //@courses.84">
+        <electiveCourses
+            courses="//@courses.70 //@courses.71 //@courses.69 //@courses.72 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82 //@courses.83"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Interaksjonsdesign og spillteknologi"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.35 //@courses.33">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.72 //@courses.84">
+        <electiveCourses
+            courses="//@courses.70 //@courses.71 //@courses.69 //@courses.73 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82 //@courses.83"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Programvareutvikling"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.32 //@courses.33">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.69 //@courses.84">
+        <electiveCourses
+            courses="//@courses.70 //@courses.71 //@courses.72 //@courses.73 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82 //@courses.83"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Algoritmer og HPC"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.33 //@courses.93 //@courses.95">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.98 //@courses.84">
+        <electiveCourses
+            courses="//@courses.97 //@courses.71 //@courses.99 //@courses.87 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82 //@courses.83"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Datamaskiner og systemprogramvare"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.33 //@courses.93 //@courses.96">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.99 //@courses.84">
+        <electiveCourses
+            courses="//@courses.98 //@courses.97 //@courses.71 //@courses.87 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82 //@courses.83"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Visuell databehandling"
+        numYears="2">
+      <semesters
+          ordinal="7"
+          mandatoryCourses="//@courses.33 //@courses.93 //@courses.94">
+        <electiveCourses
+            courses="//@courses.36 //@courses.37 //@courses.38 //@courses.39 //@courses.40 //@courses.41 //@courses.42 //@courses.43 //@courses.44 //@courses.45 //@courses.46 //@courses.47 //@courses.48 //@courses.49 //@courses.50 //@courses.51 //@courses.52 //@courses.53 //@courses.54 //@courses.55 //@courses.56 //@courses.57 //@courses.58 //@courses.59 //@courses.60 //@courses.61 //@courses.62 //@courses.63 //@courses.64 //@courses.65 //@courses.66 //@courses.67 //@courses.68"/>
+      </semesters>
+      <semesters
+          ordinal="8"
+          mandatoryCourses="//@courses.97 //@courses.84">
+        <electiveCourses
+            courses="//@courses.98 //@courses.71 //@courses.99 //@courses.87 //@courses.74 //@courses.75 //@courses.76 //@courses.77 //@courses.78 //@courses.79 //@courses.80 //@courses.81 //@courses.82 //@courses.83"/>
+      </semesters>
+      <semesters
+          ordinal="9"
+          mandatoryCourses="//@courses.100 //@courses.101"/>
+      <semesters
+          ordinal="10"
+          mandatoryCourses="//@courses.102"/>
+    </allSpecializations>
+  </studyProgrammes>
+  <studyProgrammes
+      code="BIT"
+      name="Informatikk"
+      numYears="3"
+      baseSpecializations="//@studyProgrammes.1/@allSpecializations.0">
+    <allSpecializations
+        numYears="3">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.0 //@courses.1 //@courses.2 //@courses.112 //@courses.113"/>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.5 //@courses.114 //@courses.115 //@courses.16"/>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.10 //@courses.11 //@courses.116">
+        <electiveCourses
+            courses="//@courses.117 //@courses.67 //@courses.118 //@courses.119 //@courses.120 //@courses.121 //@courses.122 //@courses.62 //@courses.63 //@courses.64 //@courses.123 //@courses.124 //@courses.125 //@courses.126 //@courses.127 //@courses.128 //@courses.129 //@courses.51 //@courses.52 //@courses.130 //@courses.53 //@courses.54 //@courses.55 //@courses.28 //@courses.56 //@courses.57 //@courses.59"/>
+      </semesters>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.13 //@courses.14 //@courses.15">
+        <electiveCourses
+            courses="//@courses.131 //@courses.132 //@courses.133 //@courses.134 //@courses.135 //@courses.75 //@courses.64 //@courses.136 //@courses.125 //@courses.137 //@courses.138"/>
+      </semesters>
+      <semesters
+          ordinal="5">
+        <electiveCourses
+            courses="//@courses.20 //@courses.21 //@courses.17 //@courses.22 //@courses.23 //@courses.18 //@courses.94 //@courses.24"/>
+      </semesters>
+      <semesters
+          ordinal="6"
+          mandatoryCourses="//@courses.139">
+        <electiveCourses
+            courses="//@courses.98 //@courses.31 //@courses.25 //@courses.29 //@courses.26 //@courses.30"/>
+      </semesters>
+    </allSpecializations>
+  </studyProgrammes>
+  <studyProgrammes
+      code="MSIT"
+      name="Master i informatikk"
+      numYears="2"
+      baseSpecializations="//@studyProgrammes.2/@allSpecializations.0 //@studyProgrammes.2/@allSpecializations.1 //@studyProgrammes.2/@allSpecializations.2 //@studyProgrammes.2/@allSpecializations.3">
+    <allSpecializations
+        name="Databaser og søk"
+        numYears="2">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.21 //@courses.91">
+        <electiveCourses
+            courses="//@courses.71 //@courses.95 //@courses.104 //@courses.17 //@courses.20"/>
+      </semesters>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.105 //@courses.30">
+        <electiveCourses
+            courses="//@courses.92 //@courses.89 //@courses.70 //@courses.106 //@courses.107 //@courses.84"/>
+      </semesters>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.109"/>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.109"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Kunstig intelligens"
+        numYears="2">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.17 //@courses.22 //@courses.85">
+        <electiveCourses
+            courses="//@courses.21 //@courses.94 //@courses.23 //@courses.91"/>
+      </semesters>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.105 //@courses.31">
+        <electiveCourses
+            courses="//@courses.86 //@courses.88 //@courses.70 //@courses.106 //@courses.107 //@courses.84"/>
+      </semesters>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.110"/>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.110"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Programvaresystemer"
+        numYears="2">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.18">
+        <electiveCourses
+            courses="//@courses.32 //@courses.34 //@courses.23 //@courses.21 //@courses.17"/>
+      </semesters>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.105 //@courses.26">
+        <electiveCourses
+            courses="//@courses.71 //@courses.73 //@courses.69 //@courses.106 //@courses.107 //@courses.84"/>
+      </semesters>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.108"/>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.108"/>
+    </allSpecializations>
+    <allSpecializations
+        name="Interaksjonsdesign, spill-og læringsteknologi"
+        numYears="2">
+      <semesters
+          ordinal="1"
+          mandatoryCourses="//@courses.35">
+        <electiveCourses
+            courses="//@courses.22 //@courses.20 //@courses.17 //@courses.94 //@courses.103"/>
+      </semesters>
+      <semesters
+          ordinal="2"
+          mandatoryCourses="//@courses.105 //@courses.72">
+        <electiveCourses
+            courses="//@courses.85 //@courses.26 //@courses.90 //@courses.106 //@courses.107 //@courses.84"/>
+      </semesters>
+      <semesters
+          ordinal="3"
+          mandatoryCourses="//@courses.111"/>
+      <semesters
+          ordinal="4"
+          mandatoryCourses="//@courses.111"/>
+    </allSpecializations>
+  </studyProgrammes>
+  <courses code="EXPH0004"
+      name="Examen philosophicum for naturvitenskap og teknologi"/>
+  <courses code="HMS0002"
+      name="HMS-kurs for 1. årsstudenter"
+      credits="0.0"
+      level="1"/>
+  <courses code="TDT4110"
+      name="Informasjonsteknologi, grunnkurs"
+      level="1"/>
+  <courses code="TMA4100"
+      name="Matematikk 1"
+      level="1"/>
+  <courses code="TMA4140"
+      name="Diskret matematikk"
+      level="1"/>
+  <courses code="TDT4100"
+      name="Objektorient programmering"
+      level="1"/>
+  <courses code="TDT4112"
+      name="Programmeringslab for datateknologi"
+      level="1"/>
+  <courses code="TFE4101"
+      name="Krets- og digitalteknikk"
+      level="1"/>
+  <courses code="TMA4115"
+      name="Matematikk 3"
+      level="1"/>
+  <courses code="TDT4113"
+      name="Datateknologi, programmeringsprosjekt"
+      level="1"/>
+  <courses code="TDT4120"
+      name="Algoritmer og datastrukturer"
+      level="2"/>
+  <courses code="TDT4160"
+      name="Datamaskiner og digitalteknikk"
+      level="2"/>
+  <courses code="TMA4240"
+      name="Statistikk"
+      level="1"/>
+  <courses code="TDT4140"
+      name="Programvareutvikling"
+      level="2"/>
+  <courses code="TDT4145"
+      name="Datamodellering og databasesystemer"
+      level="2"/>
+  <courses code="TDT4180"
+      name="Menneske–maskin-interaksjon"
+      level="2"/>
+  <courses code="TTM4100"
+      name="Kommunikasjon - Tjenester og nett"
+      level="1"/>
+  <courses code="TDT4136"
+      name="Introduksjon til kunstig intelligens"
+      level="3"/>
+  <courses code="TDT4175"
+      name="Informasjonssystemer"
+      level="3"/>
+  <courses code="TMA4135"
+      name="Matematikk 4D"
+      level="3"/>
+  <courses code="IT2810"
+      name="Webutvikling"
+      level="3"/>
+  <courses code="TDT4117"
+      name="Informasjonsgjenfinning"
+      level="3"/>
+  <courses code="TDT4137"
+      name="Kognitive arkitekturer"
+      level="3"/>
+  <courses code="TDT4165"
+      name="Programmeringsspråk"
+      level="3"/>
+  <courses code="TDT4258"
+      name="Maskinnær programmering"
+      level="3"/>
+  <courses code="TDT4186"
+      name="Operativsystemer"
+      level="3"/>
+  <courses code="TDT4240"
+      name="Programvarearkitektur"
+      level="3"/>
+  <courses code="TFY4125"
+      name="Fysikk"
+      level="1"/>
+  <courses code="TIØ4258"
+      name="Teknologiledelse"
+      level="3"/>
+  <courses code="TDT4205"
+      name="Kompilatorteknikk"
+      level="3"/>
+  <courses code="TDT4300"
+      name="Datavarehus og datagruvedrift"
+      level="3"/>
+  <courses code="TDT4171"
+      name="Metoder i kunstig intelligens"
+      level="3"/>
+  <courses code="TDT4250"
+      name="Avansert programvaredesign"
+      level="4"/>
+  <courses code="TDT4290"
+      name="Kundestyrt prosjekt"
+      credits="15.0"
+      level="4"/>
+  <courses code="TDT4252"
+      name="Virksomhets-arktitektur og -innovasjon"
+      level="4"/>
+  <courses code="IT3402"
+      name="Design av grafiske brukergrensesnitt"
+      level="4"/>
+  <courses code="AAR4250"
+      name="Arkitektur som teknologisk praksis"
+      level="4"/>
+  <courses code="BSOL4610"
+      name="Strategi og endring i teknologibedrifter"
+      level="4"/>
+  <courses code="FI3107"
+      name="Bioteknologi og etikk"
+      level="4"/>
+  <courses code="FI5205"
+      name="Corporate Responsibility and Ethics"
+      level="4"/>
+  <courses code="FI5206"
+      name="Technology for a Good Society"
+      level="4"/>
+  <courses code="GEOG3518"
+      name="Global Production Networks"
+      level="4"/>
+  <courses code="HIST2008"
+      name="Økonomisk historie"
+      level="2"/>
+  <courses code="MFEL3010"
+      name="Medisin for realfag- og teknologistudenter"
+      level="4"/>
+  <courses code="POL2018"
+      name="Japansk kultur og politisk-økonomiske system"
+      level="2"/>
+  <courses code="POL2019"
+      name="Øst-Asia: Internasjonal politikk"
+      level="2"/>
+  <courses code="SANT3600"
+      name="Kulturforståelse for et internasjonalt arbeidsliv"
+      level="4"/>
+  <courses code="SOS2017"
+      name="Organisasjon og sikkerhet"
+      level="2"/>
+  <courses code="SOS2019"
+      name="Vår sosiale virkelighet"
+      level="2"/>
+  <courses code="SPRÅK3501"
+      name="Vitenskapelig kommunikasjon for ingeniører"
+      level="4"/>
+  <courses code="SØK1151"
+      name="Makroøkonomi for ledere"
+      level="1"/>
+  <courses code="TIØ4120"
+      name="Operasjonsanalyse, grunnkurs"
+      level="3"/>
+  <courses code="TIØ4146"
+      name="Finans for teknisk-naturvitenskapelige studenter"
+      level="4"/>
+  <courses code="TIØ4201"
+      name="Risikohåndtering, samfunnssikkerhet og kritisk infrastruktur"
+      level="4"/>
+  <courses code="TIØ4215"
+      name="Kontraktsrett og kontraktsforhandlinger"
+      level="4"/>
+  <courses code="TIØ4230"
+      name="Entrepenørskap og markedsorientert produktutvikling"
+      level="4"/>
+  <courses code="TIØ4295"
+      name="Bedriftsøkonomi"
+      level="4"/>
+  <courses code="TIØ4300"
+      name="Miljøkunnskap, økosystemtjenester og bærekraft"
+      level="4"/>
+  <courses code="TIØ4365"
+      name="Intellectual Property Management"
+      level="4"/>
+  <courses code="TIØ5200"
+      name="Prosjektorganisasjoner"
+      level="4"/>
+  <courses code="TMR4137"
+      name="Bærekraftig utnyttelse av marine ressurser"
+      level="4"/>
+  <courses code="TPD4114"
+      name="Visuell formidling"
+      level="4"/>
+  <courses code="TPD4142"
+      name="Design Thinking"
+      level="4"/>
+  <courses code="TPK4120"
+      name="Industriell sikkerhet og pålitelighet"
+      level="3"/>
+  <courses code="TPK5100"
+      name="Praktisk prosjektledelse"
+      level="4"/>
+  <courses code="TSOL415"
+      name="Human Resource Management"
+      level="4"/>
+  <courses code="TSOL425"
+      name="Teamledelse og teknologi"
+      level="4"/>
+  <courses code="TTK4220"
+      name="Dynamikk i sosiale systemer"
+      level="1"/>
+  <courses code="TTM4165"
+      name="Digital økonomi"
+      level="4"/>
+  <courses code="TDT4242"
+      name="Avansert programvareutvikling"
+      level="4"/>
+  <courses code="TDT4215"
+      name="Anbefalingssystemer"
+      level="4"/>
+  <courses code="TDT4237"
+      name="Programvaresikkerhet"
+      level="4"/>
+  <courses code="TDT4245"
+      name="Samhandlingsteknologi og sosiale medier"
+      level="4"/>
+  <courses code="TDT4257"
+      name="Digital tjenesteinnovasjon"
+      level="4"/>
+  <courses code="MEDT4165"
+      name="Signalbehandling i ultralyd-avbildning"
+      level="4"/>
+  <courses code="MOL4010"
+      name="Grunnleggende molekylærbiologi"
+      level="2"/>
+  <courses code="TET4120"
+      name="Elektriske motordrifter"
+      level="4"/>
+  <courses code="TFY4220"
+      name="Faste stoffers fysikk"
+      level="4"/>
+  <courses code="TMA4105"
+      name="Matematikk 2"
+      level="1"/>
+  <courses code="TTK4130"
+      name="Modellering og simulering"
+      level="3"/>
+  <courses code="TTK4135"
+      name="Optimalisering og regulering"
+      level="3"/>
+  <courses code="TTK4175"
+      name="Instrumenteringssystemer"
+      level="4"/>
+  <courses code="TTM4115"
+      name="Design av kommuniserende systemer"
+      level="4"/>
+  <courses code="TTM4135"
+      name="Anvendt kryptografi og nettverkssikkerhet"
+      level="4"/>
+  <courses code="EIT"
+      name="Eksperter i team"
+      level="4"/>
+  <courses code="TDT4173"
+      name="Maskinlæring"
+      level="4"/>
+  <courses code="IT3105"
+      name="Kunstig intelligens programmering"
+      level="4"/>
+  <courses code="TDT4265"
+      name="Datasyn og dyp læring"
+      level="4"/>
+  <courses code="IT3708"
+      name="Bio-inspirert kunstig intelligens"
+      level="4"/>
+  <courses code="TDT4305"
+      name="Big Data-arkitektur"
+      level="4"/>
+  <courses code="TDT4310"
+      name="Intelligent tekstanalyse og språkforståelse"
+      level="4"/>
+  <courses code="TDT4225"
+      name="Store, distribuerte datamengder"
+      level="4"/>
+  <courses code="TDT4150"
+      name="Avanserte databasesystemer"
+      level="4"/>
+  <courses code="TDT4295"
+      name="Datamaskinprosjekt"
+      credits="15.0"
+      level="4"/>
+  <courses code="TDT4195"
+      name="Grunnleggende visuell databehandling"
+      level="3"/>
+  <courses code="TDT4200"
+      name="Parallelle beregninger"
+      level="4"/>
+  <courses code="TDT4255"
+      name="Datamaskinkonstruksjon"
+      level="4"/>
+  <courses code="TDT4230"
+      name="Grafikk og visualisering"
+      level="4"/>
+  <courses code="TDT4125"
+      name="Algoritmekonstruksjon"
+      level="3"/>
+  <courses code="TDT4260"
+      name="Datamaskinarkitektur"
+      level="4"/>
+  <courses code="TDT4501"
+      name="Datateknologi, fordypningsprosjekt"
+      credits="15.0"
+      level="4"/>
+  <courses code="TDT4506"
+      name="Datateknologi, fordypningsemne"
+      level="4"/>
+  <courses code="TDT4900"
+      name="Datateknologi, masteroppgave"
+      credits="30.0"
+      level="4"/>
+  <courses code="TDP4168"
+      name="Spilldesign"
+      level="4"/>
+  <courses code="TDT4287"
+      name="Algoritmer for bioinformatikk"
+      level="4"/>
+  <courses code="IT3010"
+      name="Metoder for forskningsbasert innovasjon i IT"
+      level="4"/>
+  <courses code="IT3020"
+      name="Aktuelle emner i informatikk"
+      level="4"/>
+  <courses code="IT3030"
+      name="Dyp læring"
+      level="4"/>
+  <courses code="IT3901"
+      name="Masteroppgave i informatikk: Programvaresystemer"
+      credits="60.0"
+      level="4"/>
+  <courses code="IT3902"
+      name="Masteroppgave i informatikk: Databaser og søk"
+      credits="60.0"
+      level="4"/>
+  <courses code="IT3903"
+      name="Masteroppgave i informatikk: Kunstig intelligens"
+      credits="60.0"
+      level="4"/>
+  <courses code="IT3906"
+      name="Masteroppgave i informatikk: Interaksjonsdesign, spill- og læringsteknologi"
+      credits="60.0"
+      level="4"/>
+  <courses code="MA0001"
+      name="Brukerkurs i matematikk A"/>
+  <courses code="IT2805"
+      name="Webteknologi"
+      level="1"/>
+  <courses code="IT1501"
+      name="Programmeringslab for Informatikk"
+      level="1"/>
+  <courses code="MA0301"
+      name="Elementær diskret matematikk"
+      level="1"/>
+  <courses code="IT1901"
+      name="Informatikk prosjektarbeid I"
+      level="2"/>
+  <courses code="IT1604"
+      name="Digitalt samfunn"
+      level="1"/>
+  <courses code="BI2041"
+      name="Human evolusjon og atferd"
+      level="2"/>
+  <courses code="NEVR2030"
+      name="Komprimert introduksjon til nevrovitenskap"
+      level="2"/>
+  <courses code="GEOL1003"
+      name="Geologi og miljøet"
+      level="1"/>
+  <courses code="TMM4220"
+      name="Innovasjon ved Design Thinking"
+      level="4"/>
+  <courses code="TMM4225"
+      name="Ingeniørrettet samhandling i distribuerte team: Ledelse og smart bruk"
+      level="4"/>
+  <courses code="TPK5115"
+      name="Risikostyring i prosjekter"
+      level="4"/>
+  <courses code="TPK5160"
+      name="Risikoanalyse"
+      level="4"/>
+  <courses code="BK1050"
+      name="Introduksjon til grafiske teknikker"
+      level="1"/>
+  <courses code="HLS0001"
+      name="Introduksjon til helsefremming"
+      level="1"/>
+  <courses code="PSY2020"
+      name="Psykologiske perspektiver på læring og ferdighetsutvikling"
+      level="2"/>
+  <courses code="SANT0002"
+      name="Psykologisk antropologi"
+      level="1"/>
+  <courses code="SFEL1000"
+      name="Samfunnsfaglige perspektiver på naturressursforvaltning"
+      level="1"/>
+  <courses code="TIØ4186"
+      name="Arbeidsmiljø"
+      level="4"/>
+  <courses code="MFEL1010"
+      name="Innføring i medisin for ikke-medisinere"
+      level="1"/>
+  <courses code="TBI4110"
+      name="Økotoksikologi og miljøressurser"
+      level="2"/>
+  <courses code="FY2290"
+      name="Energiressurser"
+      level="2"/>
+  <courses code="TBT4170"
+      name="Bioteknologi"
+      level="2"/>
+  <courses code="MFEL1050"
+      name="Innføring i idrettsfysiologi - Trening for prestasjon, helse og livskvalitet"
+      level="1"/>
+  <courses code="TPK4185"
+      name="Industriell systemdesign"
+      level="4"/>
+  <courses code="TIØ4216"
+      name="Forretningsjus"
+      level="4"/>
+  <courses code="TIØ4250"
+      name="Entrepenørskap - Venture CUP"
+      level="4"/>
+  <courses code="IT2901"
+      name="Informatikk prosjektarbeid II"
+      credits="15.0"
+      level="3"/>
+</no.ntnu.tdt4250.study:University>
