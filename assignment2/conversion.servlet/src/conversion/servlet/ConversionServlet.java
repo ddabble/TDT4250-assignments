@@ -87,6 +87,7 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 		if (!result.success) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND,
 					"Could not convert between " + result.fromUnit.getName() + " and " + result.toUnit.getName());
+			return;
 		}
 
 		response.setContentType("text/plain");

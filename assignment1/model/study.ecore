@@ -47,8 +47,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specialization" lowerBound="1"
         eType="#//Specialization" eOpposite="#//Specialization/semesters"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mandatoryCourses" lowerBound="1"
-        upperBound="-1" eType="#//Course"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mandatoryCourses" upperBound="-1"
+        eType="#//Course"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="electiveCourses" eType="#//ElectiveCourseList"
         containment="true" eOpposite="#//ElectiveCourseList/semester"/>
   </eClassifiers>
