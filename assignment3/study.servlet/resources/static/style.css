@@ -1,0 +1,74 @@
+body {
+    font-family: arial, sans-serif;
+}
+
+.expand-button {
+    width: fit-content; /* Doesn't work in all browsers, but that's okay in this case */
+    margin: 0;
+    padding: 0.5em 1em 0.5em 0;
+    cursor: pointer;
+}
+
+.dim.expand-button {
+    color: #999;
+}
+
+.triangle-right {
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+.triangle-right.rotated {
+    transform: rotate(90deg);
+}
+
+.expand-content {
+    display: none;
+}
+
+.programme.expand-content {
+    margin-left: 2em;
+}
+
+.specialization {
+    margin-bottom: 0;
+}
+
+.specializations.expand-content {
+    margin-top: -1em;
+    margin-left: 1.5em;
+}
+
+.semester {
+    margin-bottom: 0;
+}
+
+.semesters.expand-content {
+    margin-top: -1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.course-list.expand-content {
+    margin-left: 1em;
+}
+
+.num-years {
+    position: relative;
+    top: -0.5em;
+}
+
+.course-table {
+    border-collapse: collapse;
+}
+
+.course-table tr:nth-child(even) {
+    background-color: #DDD;
+}
+
+.course-table th,
+.course-table td {
+    border: 1px solid #DDD;
+    text-align: left;
+    padding: 8px;
+}

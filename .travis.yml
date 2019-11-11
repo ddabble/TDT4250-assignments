@@ -5,6 +5,10 @@ language: java
 jdk:
   - openjdk8
 
-install: ./assignment2/gradlew --version
+install:
+  - ./assignment2/gradlew --version
+  - ./assignment3/gradlew --version
 
-script: ./assignment2/gradlew --continue
+script:
+  - ./assignment2/gradlew --continue
+  - ./assignment3/gradlew --continue
