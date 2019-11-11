@@ -4,4 +4,7 @@
 Modelling of study programmes and courses at NTNU.
 
 ### [Assignment 2](/assignment2)
-OSGi shell for unit conversion.
+OSGi servlet and shell for unit conversion.
+
+### [Assignment 3](/assignment3)
+Transforming model instance of assignment 1 to HTML. Also serving the generated HTML from an OSGi servlet.
