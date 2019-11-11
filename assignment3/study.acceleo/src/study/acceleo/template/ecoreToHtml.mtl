@@ -1,0 +1,93 @@
+[comment encoding = UTF-8 /]
+[module ecoreToHtml('/assignment1/model/study.ecore', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[template public programmeToHtml(programme : StudyProgramme)]
+	<div>
+		<h2 class="expand-button">[triangleRight()/] [programme.code/] - [programme.name/]</h2>
+
+		<div class="programme expand-content">
+			<i class="num-years">[programme.numYears/]-&aring;rig</i>
+
+			[for (specialization : Specialization | programme.baseSpecializations)]
+				[specializationToHtml(specialization)/]
+			[/for]
+		</div>
+	</div>
+[/template]
+
+
+[template public triangleRight(traceabilityContext : OclAny)]
+	<span class="triangle-right">&#9658;</span>
+[/template]
+
+
+[template public specializationToHtml(specialization : Specialization)]
+	<div>
+		[if specialization.name -> size() > 0]
+			<h3 class="specialization">[specialization.name/]</h3>
+		[/if]
+
+		<h4 class="dim expand-button">[triangleRight()/] Semestre:</h4>
+		<div class="semesters expand-content">
+			[for (semester : Semester | specialization.semesters)]
+				[semesterToHtml(semester)/]
+			[/for]
+		</div>
+	</div>
+
+	[if specialization.furtherSpecializations -> size() > 0]
+		<h4 class="dim expand-button">[triangleRight()/] Videre spesialiseringer:</h4>
+		<div class="specializations expand-content">
+			[for (specialization : Specialization | specialization.furtherSpecializations)]
+				[specializationToHtml(specialization)/]
+			[/for]
+		</div>
+	[/if]
+[/template]
+
+
+[template public semesterToHtml(semester : Semester)]
+	<div>
+		<h3 class="semester">[semester.ordinal/]. semester</h3>
+
+		[if semester.mandatoryCourses -> size() > 0]
+			<h5 class="dim expand-button">[triangleRight()/] Obligatoriske fag:</h5>
+			<div class="course-list expand-content">
+				[courseList(semester.mandatoryCourses)/]
+			</div>
+		[/if]
+
+		[if semester.electiveCourses -> size() > 0]
+			<h5 class="dim expand-button">[triangleRight()/] Valgbare fag:</h5>
+			<div class="course-list expand-content">
+				[courseList(semester.electiveCourses.courses)/]
+			</div>
+		[/if]
+	</div>
+[/template]
+
+
+[template public courseList(courses : Collection(Course))]
+	<table class="course-table">
+		<thead>
+			<tr>
+				<th>Kode</th>
+				<th>Navn</th>
+				<th>Studiepoeng</th>
+				<th>Studieniv&aring;</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			[for (course : Course | courses)]
+				<tr>
+					<td>[course.code/]</td>
+					<td>[course.name/]</td>
+					<td>[course.credits/]</td>
+					<td>[course.level/]</td>
+				</tr>
+			[/for]
+		</tbody>
+	</table>
+[/template]

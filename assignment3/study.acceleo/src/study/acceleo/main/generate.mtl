@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module generate('/assignment1/model/study.ecore', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+[import study::acceleo::template::ecoreToHtml /]
+
+
+[template public generateHtml(university : University)]
+[comment @main/]
+[file (university.name.concat('.html'), false, 'UTF-8')]
+
+<!DOCTYPE html>
+<html lang="no">
+	<head>
+		<meta charset="UTF-8" />
+		<title>[university.name/] study programmes</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/style.css" />
+		<script src="/static/jquery-3.4.1.min.js"></script>
+		<script src="/static/scripts.js"></script>
+	</head>
+	
+	<body>
+
+		<h1>[university.name/] study programmes</h1>
+
+		[for (programme : StudyProgramme | university.studyProgrammes) separator ('<hr />')]
+			[programmeToHtml(programme)/]
+		[/for]
+	</body>
+</html>
+
+[/file]
+[/template]
